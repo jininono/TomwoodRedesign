@@ -22,7 +22,6 @@
 
 	#gnb > li:nth-of-type(2) {
 		width: 58px;
-		margin: 0 30px;
 	}
 
 	#gnb > li:nth-of-type(3) {
@@ -31,7 +30,6 @@
 
 	#gnb > li:nth-of-type(4) {
 		width: 134px;
-		margin: 0 30px;
 	}
 
 	/*sub_menu*/

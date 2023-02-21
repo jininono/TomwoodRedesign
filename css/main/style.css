@@ -82,7 +82,7 @@ header .inner {
 
 #gnb > li:nth-of-type(2) {
 	width: 72px;
-	margin: 0 40px;
+	margin: 0 2.5vw;
 }
 
 #gnb > li:nth-of-type(3) {
@@ -91,7 +91,7 @@ header .inner {
 
 #gnb > li:nth-of-type(4) {
 	width: 165px;
-	margin: 0 40px;
+	margin: 0 2.5vw;
 }
 
 #gnb > li > a {
