@@ -50,6 +50,6 @@ $(function(){
 		$("html").animate({
 			scrollTop:pos
 		},1000,"swing");
-	})
+	});
 
 });

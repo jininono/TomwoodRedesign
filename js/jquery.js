@@ -62,7 +62,13 @@ $(function(){
 	//sidebar_submenu
 	$(".gnb_submenu").css("display","none");
 	$("#sidebar_gnb > li > a").on('click', function(event) {
-		$('.gnb_submenu').stop().slideToggle(300);
+		if($(this).hasClass('open')==true){ /*open클래스는 가상 존재*/
+			$(this).siblings('.gnb_submenu').slideToggle(300);
+
+		}else{
+			$('.gnb_submenu').stop().slideUp(300);
+			$(this).siblings('.gnb_submenu').stop().slideToggle(300);
+		}
 	});
 
 	$(window).resize(function(){
