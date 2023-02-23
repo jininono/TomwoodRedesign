@@ -72,6 +72,10 @@
 		transition: all 0.3s;
 	}
 
+	.sidebar_btn button.color::before {
+		background: #111;
+	}
+
 	.sidebar_btn button span {
 		display: block;
 		width: 100%;
@@ -87,6 +91,10 @@
 		display: block;
 		top: 12px;
 		transition: all 0.3s;
+	}
+
+	.sidebar_btn button.color::after {
+		background: #111;
 	}
 
 	.sidebar_btn button span,
@@ -200,7 +208,7 @@
 		background-color: rgba(0, 0, 0, 0.5);
 		z-index: 40;
 	}
-	
+
 	/*main_visual*/
 	.pc_slide_group .pc_slide {
 		width: 100%;

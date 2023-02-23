@@ -1,4 +1,4 @@
-$(function(){
+$(function () {
 
 	var $header = $("header");
 	var $logo = $(".logo img");
@@ -14,188 +14,194 @@ $(function(){
 	var isMobile = false;
 
 	//header gnb
-	$(".sub_wrap").css("display","none");
-	$("#bg").css("display","none");
-	$("#product").on('mouseover', function(event) {
-		$("body,html").css("overflow","hidden");
+	$(".sub_wrap").css("display", "none");
+	$("#bg").css("display", "none");
+	$("#product").on('mouseover', function (event) {
+		$("body,html").css("overflow", "hidden");
 		headerBack = $header.css("background-color");
 		gnbColor = $gnb.css("color");
 		logoFilter = $logo.css("filter");
 		accountColor = $account_i.css("color");
 
 		$(".sub_wrap").stop().slideDown(300);
-		$("#bg").css("display","block");
-		$header.css("background","#fff");
-		$logo.css("filter","none");
-		$gnb.css("color","#111");
-		$account_i.css("color","#111");
+		$("#bg").css("display", "block");
+		$header.css("background", "#fff");
+		$logo.css("filter", "none");
+		$gnb.css("color", "#111");
+		$account_i.css("color", "#111");
 	});
 
-	$("#product").on('mouseout', function(event) {
-		$("body,html").css("overflow-y","auto");
+	$("#product").on('mouseout', function (event) {
+		$("body,html").css("overflow-y", "auto");
 		$(".sub_wrap").stop().slideUp(300);
-		$("#bg").css("display","none");
-		$header.css("background",headerBack);
-		$logo.css("filter",logoFilter);
-		$gnb.css("color",gnbColor);
-		$account_i.css("color",accountColor);
+		$("#bg").css("display", "none");
+		$header.css("background", headerBack);
+		$logo.css("filter", logoFilter);
+		$gnb.css("color", gnbColor);
+		$account_i.css("color", accountColor);
 	});
 
 	//sidebar
 	var $close = $(".sidebar_inner .close");
 
-	$("#sidebar_bg").css("display","none");
-	$(".sidebar_btn").on('click', function(event) {
-		$("body,html").css("overflow","hidden");
-		$("#sidebar_bg").css("display","block");
-		$(".sidebar_btn").css("display","none");
+	$("#sidebar_bg").css("display", "none");
+	$(".sidebar_btn").on('click', function (event) {
+		$("body,html").css("overflow", "hidden");
+		$("#sidebar_bg").css("display", "block");
+		$(".sidebar_btn").css("display", "none");
 		$("#sidebar").addClass("on");
 	});
 
-	$close.on('click', function(event) {
-		$("body,html").css("overflow-y","auto");
-		$("#sidebar_bg").css("display","none");
-		$(".sidebar_btn").css("display","block");
+	$close.on('click', function (event) {
+		$("body,html").css("overflow-y", "auto");
+		$("#sidebar_bg").css("display", "none");
+		$(".sidebar_btn").css("display", "block");
 		$("#sidebar").removeClass("on");
 	});
 
 	//sidebar_submenu
-	$(".gnb_submenu").css("display","none");
-	$("#sidebar_gnb > li > a").on('click', function(event) {
-		if($(this).hasClass('open')==true){ /*open클래스는 가상 존재*/
+	$(".gnb_submenu").css("display", "none");
+	$("#sidebar_gnb > li > a").on('click', function (event) {
+		if ($(this).hasClass('open') == true) { /*open클래스는 가상 존재*/
 			$(this).siblings('.gnb_submenu').slideToggle(300);
 
-		}else{
+		} else {
 			$('.gnb_submenu').stop().slideUp(300);
 			$(this).siblings('.gnb_submenu').stop().slideToggle(300);
 		}
 	});
 
-	$(window).resize(function(){
+	$(window).resize(function () {
 		isMobile = false;
 
 		if (window.innerWidth > 1500) {
 
-			$(window).on("scroll",function(){
+			$(window).on("scroll", function () {
 
 				var scroll = $(window).scrollTop();
 
-				if(scroll > 800) {
-					$header.css("background","#fff");
-					$logo.css("filter","none");
-					$gnb.css("color","#111");
-					$account_i.css("color","#111");
+				if (scroll > 800) {
+					$header.css("background", "#fff");
+					$logo.css("filter", "none");
+					$gnb.css("color", "#111");
+					$account_i.css("color", "#111");
 				}
 				else {
-					$header.css("background","none");
-					$logo.css("filter","invert(100%)");
-					$gnb.css("color","#fff");
-					$account_i.css("color","#fff");
+					$header.css("background", "none");
+					$logo.css("filter", "invert(100%)");
+					$gnb.css("color", "#fff");
+					$account_i.css("color", "#fff");
 				}
 
 			});
-		}else if (window.innerWidth > 1279) {
+		} else if (window.innerWidth > 1279) {
 
-			$(window).on("scroll",function(){
+			$(window).on("scroll", function () {
 
 				var scroll = $(window).scrollTop();
 
-				if(scroll > 600) {
-					$header.css("background","#fff");
-					$logo.css("filter","none");
-					$gnb.css("color","#111");
-					$account_i.css("color","#111");
+				if (scroll > 600) {
+					$header.css("background", "#fff");
+					$logo.css("filter", "none");
+					$gnb.css("color", "#111");
+					$account_i.css("color", "#111");
 				}
 				else {
-					$header.css("background","none");
-					$logo.css("filter","invert(100%)");
-					$gnb.css("color","#fff");
-					$account_i.css("color","#fff");
+					$header.css("background", "none");
+					$logo.css("filter", "invert(100%)");
+					$gnb.css("color", "#fff");
+					$account_i.css("color", "#fff");
 				}
 
 			});
-		}else if (window.innerWidth > 1023) {
+		} else if (window.innerWidth > 1023) {
 
-			$(window).on("scroll",function(){
+			$(window).on("scroll", function () {
 
 				var scroll = $(window).scrollTop();
 
-				if(scroll > 600) {
-					$header.css("background","#fff");
-					$logo.css("filter","none");
-					$gnb.css("color","#111");
-					$account_i.css("color","#111");
+				if (scroll > 600) {
+					$header.css("background", "#fff");
+					$logo.css("filter", "none");
+					$gnb.css("color", "#111");
+					$account_i.css("color", "#111");
 				}
 				else {
-					$header.css("background","none");
-					$logo.css("filter","invert(100%)");
-					$gnb.css("color","#fff");
-					$account_i.css("color","#fff");
+					$header.css("background", "none");
+					$logo.css("filter", "invert(100%)");
+					$gnb.css("color", "#fff");
+					$account_i.css("color", "#fff");
 				}
 
 			});
-		}else if (window.innerWidth > 767) {
+		} else if (window.innerWidth > 767) {
 
-			$(window).on("scroll",function(){
+			$(window).on("scroll", function () {
 
 				var scroll = $(window).scrollTop();
 
-				if(scroll > 500) {
-					$(".sidebar_btn span").css("background-color","#000");
-					$header.css("background","#fff");
-					$logo.css("filter","none");
-					$search_i.css("color","#111");
+				if (scroll > 500) {
+					$(".sidebar_btn span").css("background-color", "#111");
+					$(".sidebar_btn button").addClass("color"); //가상 선택자 css 변경하기
+					$header.css("background", "#fff");
+					$logo.css("filter", "none");
+					$search_i.css("color", "#111");
 				}
 				else {
-					$(".sidebar_btn span").css("background-color","#fff");
-					$header.css("background","none");
-					$logo.css("filter","invert(100%)");
-					$search_i.css("color","#fff");
+					$(".sidebar_btn span").css("background-color", "#fff");
+					$(".sidebar_btn button").removeClass("color");
+					$header.css("background", "none");
+					$logo.css("filter", "invert(100%)");
+					$search_i.css("color", "#fff");
 				}
 
 			});
-		}else if (window.innerWidth > 600) {
+		} else if (window.innerWidth > 600) {
 			isMobile = true;
 
-			$(window).on("scroll",function(){
+			$(window).on("scroll", function () {
 
 				var scroll = $(window).scrollTop();
 
-				if(scroll > 550) {
-					$(".sidebar_btn span").css("background-color","#000");
-					$header.css("background","#fff");
-					$logo.css("filter","none");
-					$search_i.css("color","#111");
+				if (scroll > 550) {
+					$(".sidebar_btn span").css("background-color", "#111");
+					$(".sidebar_btn button").addClass("color");
+					$header.css("background", "#fff");
+					$logo.css("filter", "none");
+					$search_i.css("color", "#111");
 				}
 				else {
-					$(".sidebar_btn span").css("background-color","#fff");
-					$header.css("background","none");
-					$logo.css("filter","invert(100%)");
-					$search_i.css("color","#fff");
+					$(".sidebar_btn span").css("background-color", "#fff");
+					$(".sidebar_btn button").removeClass("color");
+					$header.css("background", "none");
+					$logo.css("filter", "invert(100%)");
+					$search_i.css("color", "#fff");
 				}
 
 			});
-		}else{
+		} else {
 			isMobile = true;
 
-			$(window).on("scroll",function(){
+			$(window).on("scroll", function () {
 
 				var scroll = $(window).scrollTop();
 
-				if(scroll > 400) {
-					$(".sidebar_btn span").css("background-color","#000");
-					$header.css("background","#fff");
-					$logo.css("filter","none");
-					$search_i.css("color","#111");
+				if (scroll > 400) {
+					$(".sidebar_btn span").css("background-color", "#111");
+					$(".sidebar_btn button").addClass("color");
+					$header.css("background", "#fff");
+					$logo.css("filter", "none");
+					$search_i.css("color", "#111");
 				}
 				else {
-					$(".sidebar_btn span").css("background-color","#fff");
-					$header.css("background","none");
-					$logo.css("filter","invert(100%)");
-					$search_i.css("color","#fff");
+					$(".sidebar_btn span").css("background-color", "#fff");
+					$(".sidebar_btn button").removeClass("color");
+					$header.css("background", "none");
+					$logo.css("filter", "invert(100%)");
+					$search_i.css("color", "#fff");
 				}
-	  		});
-	  	}	
+			});
+		}
 	}).resize();
 
 	//main_visual slide
@@ -225,7 +231,7 @@ $(function(){
 		pauseOnFocus: false
 	});
 
-	if(!isMobile) {
+	if (!isMobile) {
 		var nowImg;
 		var originSrc;
 		var newSrc;
@@ -239,10 +245,10 @@ $(function(){
 			newSrc = originSrc.substring(0, originSrc.lastIndexOf('.')) + '_on' + ext;
 			nowImg.attr('src', newSrc);
 
-		}, function() {
+		}, function () {
 			nowImg.attr('src', originSrc);
 
 		});
 	}
-	
+
 });
