@@ -95,7 +95,7 @@ $(function(){
 
     			var posTop = (page-1) * $(window).height();
 			 
-				$html.animate({scrollTop : posTop});
+				$html.animate({scrollTop : 60 + posTop});
 			});			
   				
 		}
