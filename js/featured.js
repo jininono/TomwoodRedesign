@@ -40,18 +40,18 @@ $(function(){
 	});
 
 	$(window).resize(function(){
-
-		window.addEventListener("wheel", function(e){
-			e.preventDefault();
-		},{passive : false});
-
 		var $html = $("html");		 
 		var page = 1;
 		var lastPage = $("section").length + 1;
 		 
 		$html.animate({scrollTop:0},10);
 
-		if (window.innerWidth > 1023) {
+		if (window.innerWidth > 767) {
+
+			window.addEventListener("wheel", function(e){
+				e.preventDefault();
+			},{passive : false});
+
 			$(window).on("wheel", function(e){
 				if($html.is(":animated")) return;
 				if(e.originalEvent.deltaY > 0){
