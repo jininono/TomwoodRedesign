@@ -1,7 +1,5 @@
 $(function(){
 
-	var isMobile = false;
-
 	//header gnb
 	$(".sub_wrap").css("display","none");
 	$("#bg").css("display","none");
@@ -43,47 +41,55 @@ $(function(){
 
 	$(window).resize(function(){
 
+		window.addEventListener("wheel", function(e){
+			e.preventDefault();
+		},{passive : false});
+
+		var $html = $("html");		 
+		var page = 1;
+		var lastPage = $("section").length + 1;
+		 
+		$html.animate({scrollTop:0},10);
+
 		if (window.innerWidth > 1023) {
+			$(window).on("wheel", function(e){
+				if($html.is(":animated")) return;
+				if(e.originalEvent.deltaY > 0){
+					if(page== lastPage) return;
+					page++;
+				}else if(e.originalEvent.deltaY < 0){
+					if(page == 1) return;
+					page--;
+				}
 
-			isMobile = false;
+				var posTop = (page-1) * $(window).height();
+			 
+				$html.animate({scrollTop : posTop});	
+			});
+		} else {
+			var startY;
+			var endY;
 
-		}else{
+			$(document).on('touchstart',function(e){
+			    startY = e.originalEvent.changedTouches[0].screenY;
+			});
 
-			isMobile = true;
+			$(document).on('touchend',function(e){
+    			endY = e.originalEvent.changedTouches[0].screenY;
+
+    			if(startY - endY > 0) {
+    				if(page== lastPage) return;
+					page++;
+    			} else if(startY - endY < 0) {
+    				if(page == 1) return;
+					page--;
+    			}
+
+    			var posTop = (page-1) * $(window).height();
+			 
+				$html.animate({scrollTop : posTop});
+			});			
+  				
 		}
-
-	}).resize();
-
-	//wheel
-	window.addEventListener("wheel", function(e){
-		e.preventDefault();
-	},{passive : false});
-
-	var $html = $("html");
- 
-	var page = 1;
-	 
-	var lastPage = $("section").length + 1;
-	 
-	$html.animate({scrollTop:0},10);
-
-	$(window).on("wheel", function(e){
- 
-		if($html.is(":animated")) return;
-	 
-		if(e.originalEvent.deltaY > 0){
-			if(page== lastPage) return;
-	 
-			page++;
-		}else if(e.originalEvent.deltaY < 0){
-			if(page == 1) return;
-	 
-			page--;
-		}
-		var posTop = (page-1) * $(window).height();
-	 
-		$html.animate({scrollTop : posTop});
-	 
-	});
-	
+	}).resize();	
 });
