@@ -70,6 +70,14 @@ $(function(){
 			var startY;
 			var endY;
 
+			window.addEventListener("touchstart", function(e){
+				e.preventDefault();
+			},{passive : false});
+
+			window.addEventListener("touchend", function(e){
+				e.preventDefault();
+			},{passive : false});
+
 			$(document).on('touchstart',function(e){
 			    startY = e.originalEvent.changedTouches[0].screenY;
 			});
