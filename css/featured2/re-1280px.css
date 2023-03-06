@@ -97,8 +97,8 @@
 	  box-sizing: border-box;
 	}
 
-	#fullpage {
-		margin-top: 99px; /* header값 */
+	main {
+		padding-top: 99px;
 	}
 
 	/*footer*/

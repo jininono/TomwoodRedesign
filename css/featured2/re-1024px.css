@@ -206,8 +206,8 @@
 		display: none;
 	}
 
-	#fullpage {
-		margin-top: 80px; /* header값 */
+	main {
+		padding-top: 80px;
 	}
 
 	section .pc_img {

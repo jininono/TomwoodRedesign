@@ -52,16 +52,16 @@
 		line-height: 1.3;
 	}
 
+	main {
+		padding-top: 60px;
+	}
+
 	section .re_img {
 		display: none;
 	}
 
 	section .mo_img {
 		display: block;
-	}
-
-	#fullpage {
-		margin-top: 60px; /* header값 */
 	}
 
 	section .text_wrap {
