@@ -42,7 +42,7 @@ $(function () {
 	console.log("test");
 	$("#fullpage").fullpage({
 		autoScrolling: true,
-		scrollHorizontally: true
-		// responsiveWidth: 768
+		scrollHorizontally: true,
+		responsiveWidth: 768
 	});
 });
