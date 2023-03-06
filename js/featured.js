@@ -39,7 +39,6 @@ $(function () {
 		$('.gnb_submenu').stop().slideToggle(300);
 	});
 
-	console.log("test");
 	$("#fullpage").fullpage({
 		autoScrolling: true,
 		scrollHorizontally: true,
