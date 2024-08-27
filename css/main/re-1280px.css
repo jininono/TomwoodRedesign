@@ -165,20 +165,20 @@
 
 	#sect04 .title2 {
 		position: absolute;
-		left: 0;
+		left: 20%;
 		top: 70px;
 	}
 
 	#sect04 .text2 {
 		width: 280px;
 		position: absolute;
-		left: 250px;
+		left: 44%;
 		top: 80px;
 	}
 
 	#sect04 .more_box {
 		position: absolute;
-		left: 250px;
+		left: 44%;
 		top: 200px;
 		display: inline-block;
 		padding: 15px 50px;

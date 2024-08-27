@@ -411,20 +411,20 @@ header .inner {
 
 #sect04 .title2 {
 	position: absolute;
-	left: 0;
+	left: 27%;
 	top: 70px;
 }
 
 #sect04 .text2 {
 	width: 300px;
 	position: absolute;
-	left: 280px;
+	left: 53%;
 	top: 80px;
 }
 
 #sect04 .more_box {
 	position: absolute;
-	left: 280px;
+	left: 53%;
 	top: 200px;
 	display: inline-block;
 	padding: 15px 55px;
